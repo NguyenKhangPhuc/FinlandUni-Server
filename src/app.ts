@@ -1,11 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 require('express-async-errors');
 import express from 'express';
+import cors from 'cors';
 import { connect } from 'mongoose';
 import { MONGODB_URI } from './utils/config';
 import universitiesRouter from './routes/universities';
 const app = express();
 app.use(express.json());
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+app.use(cors());
 
 run().catch(err => console.log(err));
 
