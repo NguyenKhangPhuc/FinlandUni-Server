@@ -5,9 +5,10 @@ import cors from 'cors';
 import { connect } from 'mongoose';
 import { MONGODB_URI } from './utils/config';
 import universitiesRouter from './routes/universities';
+import middleware from './utils/middleware';
 const app = express();
 app.use(express.json());
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+
 app.use(cors());
 
 run().catch(err => console.log(err));
@@ -24,5 +25,10 @@ app.get('/ping', (_req, res) => {
 });
 
 app.use('/api/universities', universitiesRouter);
+
+//Use middleware for handling error
+app.use(middleware.errorHandler);
+app.use(middleware.unknownEndpoint);
+
 
 export default app;

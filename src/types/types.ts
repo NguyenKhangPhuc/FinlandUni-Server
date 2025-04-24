@@ -21,5 +21,6 @@ export interface Major {
     studyField: string,
     tuition: string,
     description: string,
-    website: string
+    website: string,
+    fieldOptions: Array<string>
 }

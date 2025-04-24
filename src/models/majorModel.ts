@@ -1,6 +1,8 @@
 import { model, Schema } from "mongoose";
 import { Major } from "../types/types";
 
+///Model for Major based on type Major (TS + Mongoose)
+
 const majorSchema = new Schema<Major>({
     uni_id: { type: String, require: true },
     major: { type: String, require: true },

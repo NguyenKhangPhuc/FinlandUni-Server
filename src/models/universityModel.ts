@@ -1,6 +1,9 @@
 import { Schema, model } from "mongoose";
 import { University } from "../types/types";
 
+///Model for university based on type University (TS + Mongoose)
+
+
 const uniSchema = new Schema<University>({
     id: { type: String, require: true },
     name: { type: String, require: true },
