@@ -20,10 +20,12 @@ async function run() {
 
 
 app.get('/ping', (_req, res) => {
-    console.log('someone pinged here');
+    console.log();
     res.send('pong');
 });
-
+app.get('/health', (_req, res) => {
+    res.status(200).json({ message: 'ok' });
+});
 app.use('/api/universities', universitiesRouter);
 
 //Use middleware for handling error
